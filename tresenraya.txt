@@ -39,6 +39,33 @@
 			}
 		}
 
+/* CREAR EL TABLERO */
+		function gato(){
+			ctx.fillStyle   = colorCanvas;
+			ctx.strokeStyle = colorGato;
+			ctx.lineWidth   = 20;
+ 
+			/* Dibujar el # */
+			ctx.beginPath();
+			ctx.moveTo(330,20);
+			ctx.lineTo(330,420);
+			ctx.stroke();
+ 
+			ctx.beginPath();
+			ctx.moveTo(470,20);
+			ctx.lineTo(470,420);
+			ctx.stroke();
+ 
+			ctx.beginPath();
+			ctx.moveTo(200,150);
+			ctx.lineTo(600,150);
+			ctx.stroke();
+ 
+			ctx.beginPath();
+			ctx.moveTo(200,290);
+			ctx.lineTo(600,290);
+			ctx.stroke();
+
 	</script>
 </head>
 uriimc97@gmail.com
