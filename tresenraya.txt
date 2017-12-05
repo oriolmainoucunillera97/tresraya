@@ -66,6 +66,22 @@
 			ctx.lineTo(600,290);
 			ctx.stroke();
 
+/* Creacion de las cassillas para las fichas */
+
+			fichas_array.push(new Ficha(200, 20,largo,largo,0,0,0));
+			fichas_array.push(new Ficha(330, 20,largo,largo,1,0,1));
+			fichas_array.push(new Ficha(470, 20,largo,largo,2,0,2));
+ 
+			fichas_array.push(new Ficha(200,150,largo,largo,3,1,0));
+			fichas_array.push(new Ficha(330,150,largo,largo,4,1,1));
+			fichas_array.push(new Ficha(470,150,largo,largo,5,1,2));
+ 
+			fichas_array.push(new Ficha(200,290,largo,largo,6,2,0));
+			fichas_array.push(new Ficha(330,290,largo,largo,7,2,1));
+			fichas_array.push(new Ficha(470,290,largo,largo,8,2,2));
+ 
+		}
+
 	</script>
 </head>
 uriimc97@gmail.com
