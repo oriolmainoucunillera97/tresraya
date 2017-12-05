@@ -16,6 +16,29 @@
 		var colorCanvas = "black";
  
 		window.onload = iniciar;
+
+/* INICIAR EL JUEGO */
+		function iniciar(){
+			canvas        = document.getElementById("miCanvas");
+			canvas.width  = ancho;
+			canvas.height = alto;
+			if(canvas && canvas.getContext){
+				ctx = canvas.getContext("2d");
+				if(ctx){
+					canvas.removeEventListener("click",iniciar,false);
+					fichas_array = [];
+					gameOver     = false;
+					tiradas      = 0;
+ 
+					gato();
+					mensaje("Usted inicia");
+					canvas.addEventListener("click",selecciona,false);
+				}else{
+					document.write("Tu navegador no soporta canvas");
+				}
+			}
+		}
+
 	</script>
 </head>
 uriimc97@gmail.com
