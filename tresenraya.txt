@@ -96,6 +96,14 @@
 			this.pinta=pintaFicha;
 		}
 
+
+/* DIBUJAR LA FICHA */
+		function pintaFicha(valor){
+			this.valor=valor;
+			ctx.font="bold 100px Arial";
+			ctx.fillStyle=colorGato;
+			ctx.fillText(valor,this.x+30,this.y+100,this.w,this.h);
+		}
 	</script>
 </head>
 uriimc97@gmail.com
