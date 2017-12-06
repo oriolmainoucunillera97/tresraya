@@ -144,7 +144,15 @@
 			}else{
 				canvas.addEventListener("click",selecciona,false);
 			}
-		
+
+/* CONVERTIR LAS CORDENADAS DE LA VENTANA A CORDENADAS DENTRO DEL CANVAS */
+		function ajusta(xx,yy){
+			var posCanvas = canvas.getBoundingClientRect();
+			var x = xx-posCanvas.left;
+			var y = yy-posCanvas.top;
+			return {x:x,y:y}
+		}
+
 
 	</script>
 </head>
