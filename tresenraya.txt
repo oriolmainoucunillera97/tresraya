@@ -153,6 +153,43 @@
 			return {x:x,y:y}
 		}
 
+/* REALIZA LA JUGADA DE LA MAQUINA */
+		function tiraMaquina(){
+			tiradas++;
+			console.log("Tirada numero: "+tiradas);
+			if(gameOver==false){
+				verifica(true);
+ 
+				var mejorJugada=0;
+				var posibilidades=[];
+				for(var i=0; i<fichas_array.length; i++){
+					ficha=fichas_array[i];
+					if(ficha.peso > mejorJugada){
+						mejorJugada=ficha.peso;
+						posibilidades=[];
+						posibilidades.push(i);
+ 
+						//ii=i;
+					}else if (ficha.peso==mejorJugada){
+						posibilidades.push(i);
+					}
+				}
+ 
+ 
+				elegir = Math.floor(Math.random()*(posibilidades.length-1));
+				ii=posibilidades[elegir];
+				ficha= fichas_array[ii];
+				ficha.pinta("O");
+ 
+				console.log("Jugada :"+ficha.ren+", "+ficha.col+" "+ficha.i);
+				console.log("-----------------");
+ 
+				verifica(false);
+				if(!gameOver){
+					canvas.addEventListener("click",selecciona,false);
+				}
+			}
+		}
 
 	</script>
 </head>
