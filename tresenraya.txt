@@ -104,6 +104,16 @@
 			ctx.fillStyle=colorGato;
 			ctx.fillText(valor,this.x+30,this.y+100,this.w,this.h);
 		}
+
+/* MOSTRAR MENJAES AL USUARIO */
+		function mensaje(cadena){
+			var lon=(canvas.width-(25*cadena.length))/2;
+			ctx.strokeStyle=colorGato;
+			ctx.clearRect(0,420,canvas.width,100);
+			ctx.font="bold 40px Courier";
+			ctx.fillText(cadena,lon,470);
+		}
+
 	</script>
 </head>
 uriimc97@gmail.com
