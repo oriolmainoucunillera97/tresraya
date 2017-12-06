@@ -114,6 +114,38 @@
 			ctx.fillText(cadena,lon,470);
 		}
 
+/* SELECCIONAR UNA CASILLA */
+		function selecciona(e){
+			canvas.removeEventListener("click",selecciona,false);
+			var pos = ajusta(e.clientX, e.clientY);
+			var x = pos.x;
+			var y = pos.y;
+			var ficha;
+			for(var i=0; i<fichas_array.length; i++){
+				ficha=fichas_array[i];
+				if( (x>ficha.x) && (x<ficha.x+ficha.w) && (y>ficha.y) && (y<ficha.y+ficha.h) ){
+					if(ficha.valor==""){
+						tiradas++;
+						break;
+					}
+				}
+			}
+			if(i<fichas_array.length){
+				console.log(i);
+				if(ficha.valor==""){
+					ficha.pinta("X");
+					verifica(false);
+					if(!gameOver){
+						mensaje("Pensando...");
+						setTimeout(tiraMaquina,1000);
+					}
+ 
+				}
+			}else{
+				canvas.addEventListener("click",selecciona,false);
+			}
+		
+
 	</script>
 </head>
 uriimc97@gmail.com
