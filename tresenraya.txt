@@ -82,6 +82,20 @@
  
 		}
 
+/* CREA LAS FICHAS */
+		function Ficha(x,y,w,h,i,ren,col){
+			this.x=x;
+			this.y=y;
+			this.w=w;
+			this.h=h;
+			this.i=i;
+			this.ren=ren;
+			this.col=col;
+			this.peso=0;
+			this.valor="";
+			this.pinta=pintaFicha;
+		}
+
 	</script>
 </head>
 uriimc97@gmail.com
