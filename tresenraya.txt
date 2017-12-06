@@ -314,6 +314,57 @@
 			}
 		}
 
+/* DEVUELVE LA FICHA DE LA CASILLA SOLICITADA */
+		function buscarFicha(ren,col){
+			for(var i=0; i<fichas_array.length; i++){
+				ficha=fichas_array[i];
+				if(ficha.ren==ren && ficha.col==col){
+					break;
+				}
+			}
+			return ficha;
+		}
+ 
+		/* COMPROBAR SI GANA, PIERDE O EMPATA */
+		function verificaFin(O,X){
+			var fin=false;
+			if(X==3){
+				fin=true;
+				mensaje("!GANASTE!");
+			}
+			if(O==3){
+				fin=true;
+				mensaje("¡Perdiste!");
+			}
+ 
+			if(!fin){
+				if(tiradas<9){
+					mensaje("Su turno");
+				}else{
+					fin=true;
+					mensaje("¡Empate!");
+				}
+			}
+ 
+			if(fin){
+				canvas.addEventListener("click",iniciar,false);
+			}
+			return fin;
+		}
+	</script>
+	<style>
+		body{
+			width:800px;
+			margin:auto;
+		}
+		h1{
+			text-align:center
+		}
+		#miCanvas{
+			border:solid 1px;
+		}
+	</style>
+
 	</script>
 </head>
 uriimc97@gmail.com
