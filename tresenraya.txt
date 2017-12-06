@@ -215,6 +215,105 @@
 			}
 		}
 
+/* COMPROBAR TODO EN UNO */
+		function verifica(calculaPeso){
+			verificaRenglones(calculaPeso);
+			verificaColumnas(calculaPeso);
+			verificaDiagonal1(calculaPeso);
+			verificaDiagonal2(calculaPeso);
+		}
+ 
+		/* COMPROBAR - SI HAY 3 */
+		function verificaRenglones(calculaPeso){
+			if(gameOver==false){
+				for(i=0; i<RENGLONES; i++){
+					fichas_X=0;
+					fichas_O=0;
+					for(j=0; j<COLUMNAS; j++){
+						ficha = buscarFicha(i,j);
+						fichas_X += (ficha.valor=="X"?1:0);
+						fichas_O += (ficha.valor=="O"?1:0);
+					}
+					if(calculaPeso){
+						for(j=0; j<COLUMNAS; j++){
+							ficha=buscarFicha(i,j);
+							pesoFicha(ficha.i,fichas_O,fichas_X);
+						}
+					}
+					gameOver=verificaFin(fichas_O,fichas_X);
+					if(gameOver) break;
+				}
+			}
+		}
+		/* COMPROBAR | SI HAY 3 */ 
+		function verificaColumnas(calculaPeso){
+			if(gameOver==false){
+				for(j=0; j<COLUMNAS; j++){
+					fichas_X=0;
+					fichas_O=0;
+					for(i=0; i<RENGLONES; i++){
+						ficha = buscarFicha(i,j);
+						fichas_X += (ficha.valor=="X"?1:0);
+						fichas_O += (ficha.valor=="O"?1:0);
+					}
+					if(calculaPeso){
+						for(i=0; i<RENGLONES; i++){
+							ficha=buscarFicha(i,j);
+							pesoFicha(ficha.i,fichas_O,fichas_X);
+						}
+					}
+					gameOver=verificaFin(fichas_O,fichas_X);
+					if(gameOver) break;
+				}
+			}
+		}
+		/* COMPROBAR \ SI HAY 3 */
+		function verificaDiagonal1(calculaPeso){
+			if(gameOver==false){
+				fichas_X=0;
+				fichas_O=0;
+				for(var i=0; i<RENGLONES; i++){
+					ficha=buscarFicha(i,i);
+					fichas_X += (ficha.valor=="X"?1:0);
+					fichas_O += (ficha.valor=="O"?1:0);
+				}
+				console.log("D1:X"+fichas_X+", O:"+fichas_O);
+				if(calculaPeso){
+					for(i=0; i<RENGLONES; i++){
+						ficha=buscarFicha(i,i);
+						pesoFicha(ficha.i,fichas_O,fichas_X);
+						console.log("Ficha: "+ficha.i+" peso: "+ficha.peso);
+					}
+				}
+				gameOver=verificaFin(fichas_O,fichas_X);
+			}
+		}
+		/* COMPROBAR / SI HAY 3 */
+		function verificaDiagonal2(calculaPeso){
+			if(gameOver==false){
+				fichas_X=0;
+				fichas_O=0;
+				j=2;
+				for(var i=0; i<RENGLONES; i++){
+					ficha=buscarFicha(i,j);
+					fichas_X += (ficha.valor=="X"?1:0);
+					fichas_O += (ficha.valor=="O"?1:0);
+					j--;
+				}
+				console.log("D1:X"+fichas_X+", O:"+fichas_O);
+				if(calculaPeso){
+					j=2;
+					for(i=0; i<RENGLONES; i++){
+						ficha=buscarFicha(i,j);
+						pesoFicha(ficha.i,fichas_O,fichas_X);
+						console.log("Ficha: "+ficha.i+" peso: "+ficha.peso);
+						j--;
+					}
+				}
+				gameOver=verificaFin(fichas_O,fichas_X);
+			}
+		}
+
 	</script>
 </head>
 uriimc97@gmail.com
